@@ -1,0 +1,26 @@
+{
+  "name": "hubot-vanity-github",
+  "version": "0.0.0",
+  "description": "A hubot script for battling it out via github follower counts.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/myplanetdigital/hubot-vanity-github.git"
+  },
+  "keywords": [
+    "hubot",
+    "script",
+    "github"
+  ],
+  "dependencies": {
+    "octonode": "*"
+  },
+  "devDependencies": {
+    "hubot": "*"
+  },
+  "author": "patcon@myplanetdigital",
+  "license": "MIT"
+}
