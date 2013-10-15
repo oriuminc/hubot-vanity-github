@@ -16,7 +16,8 @@
     "github"
   ],
   "dependencies": {
-    "octonode": "*"
+    "octonode": "*",
+    "sprintf": ">= 0.1.1"
   },
   "devDependencies": {
     "hubot": "*"
