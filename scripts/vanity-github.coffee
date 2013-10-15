@@ -38,15 +38,11 @@ countFollowers = (msg, members, cb) ->
       counts.push keptUser
       if counts.length == members.length
         last     = 0
-        response = "\n"
+        response = ""
         counts.sort (x, y) ->
           y.followers - x.followers
         counts.forEach (user) ->
-          if last > 0
-            diff = last - user.followers
-            response += sprintf("%15s %3d  - %2d to go\n", user.username, user.followers, diff)
-          else
-            response += sprintf("%15s %3d\n", user.username, user.followers)
+          response += sprintf("%3d %15s\n", user.followers, user.username)
           last = user.followers
         cb response
 
