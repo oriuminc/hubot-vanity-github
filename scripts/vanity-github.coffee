@@ -42,7 +42,7 @@ countFollowers = (msg, members, cb) ->
         counts.sort (x, y) ->
           y.followers - x.followers
         counts.forEach (user) ->
-          response += sprintf("%3d %15s\n", user.followers, user.username)
+          response += sprintf("%3d %-15s\n", user.followers, user.username)
           last = user.followers
         cb response
 
