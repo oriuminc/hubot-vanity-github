@@ -18,16 +18,44 @@
 # Author:
 #   patcon@myplanetdigital
 
+sprintf  = require('sprintf').sprintf
+github = require 'octonode'
+
+client = github.client process.env.HUBOT_GITHUB_TOKEN
+
+countFollowers = (msg, members, cb) ->
+  counts = []
+
+  members.forEach (member) ->
+    ghuser = client.user member.login
+    ghuser.info (err, body) ->
+      user = body
+
+      keptUser =
+        followers: user.followers
+        username: member.login
+
+      counts.push keptUser
+      if counts.length == members.length
+        last     = 0
+        response = "\n"
+        counts.sort (x, y) ->
+          y.followers - x.followers
+        counts.forEach (user) ->
+          if last > 0
+            diff = last - user.followers
+            response += sprintf("%15s %3d  - %2d to go\n", user.username, user.followers, diff)
+          else
+            response += sprintf("%15s %3d\n", user.username, user.followers)
+          last = user.followers
+        cb response
+
+
 module.exports = (robot) ->
 
   robot.respond /vanity me github$/i, (msg) ->
 
-    github = require 'octonode'
-    client = github.client process.env.HUBOT_GITHUB_TOKEN
     ghteam = client.team process.env.HUBOT_GITHUB_TEAM_ID
     ghteam.members (err, body) ->
-      body.forEach (team_member) ->
-        ghuser = client.user team_member.login
-        ghuser.info (err, body) ->
-          follower_count = body.followers
-          msg.send "#{team_member.login} : #{follower_count}"
+      countFollowers msg, body, (output) ->
+        msg.send output
