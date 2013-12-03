@@ -1,6 +1,6 @@
 {
   "name": "hubot-vanity-github",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A hubot script for battling it out via github follower counts.",
   "main": "index.coffee",
   "scripts": {
@@ -8,11 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/patcon/hubot-vanity-github.git"
+    "url": "https://github.com/myplanetdigital/hubot-vanity-github.git"
   },
   "keywords": [
     "hubot",
-    "script",
+    "hubot-scripts",
+    "vanity",
     "github"
   ],
   "dependencies": {
@@ -20,7 +21,8 @@
     "sprintf": ">= 0.1.1"
   },
   "devDependencies": {
-    "hubot": "*"
+    "grunt-release": "~0.6.0",
+    "matchdep": "~0.1.2"
   },
   "author": "patcon@myplanetdigital",
   "license": "MIT"
