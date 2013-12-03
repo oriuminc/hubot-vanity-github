@@ -8,11 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/patcon/hubot-vanity-github.git"
+    "url": "https://github.com/myplanetdigital/hubot-vanity-github.git"
   },
   "keywords": [
     "hubot",
-    "script",
+    "hubot-scripts",
+    "vanity",
     "github"
   ],
   "dependencies": {
@@ -20,7 +21,8 @@
     "sprintf": ">= 0.1.1"
   },
   "devDependencies": {
-    "hubot": "*"
+    "grunt": "~0.4.2",
+    "grunt-release": "~0.6.0"
   },
   "author": "patcon@myplanetdigital",
   "license": "MIT"
