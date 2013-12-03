@@ -1,6 +1,6 @@
 {
   "name": "hubot-vanity-github",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A hubot script for battling it out via github follower counts.",
   "main": "index.coffee",
   "scripts": {
